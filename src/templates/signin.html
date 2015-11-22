@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<br>
+
+
+<h1 align="center"> {{ title }} </h1>
+
+
+<br><br><br>
+
+<div class="col-xs-4 col-xs-offset-3">
+	<div style="float:left;">
+		<h1> Sign In </h1>
+		<br>
+	  <form method='POST' action=''>{% csrf_token %}
+			{{ signinform|crispy }}
+			<input type='submit' class="btn btn-success" name = 'signin' value='Sign In' />
+		</form>
+	</div>
+</div>
+
+	<div style="float:left;">
+		<h1> Create Account </h1>
+		<br>
+	 
+	</div>
+</div>
+
+
+
+
+{% endblock %}
