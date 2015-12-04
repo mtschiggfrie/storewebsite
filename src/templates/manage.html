@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<p><a class="btn btn-default" href="{% url 'manageproducts' %}" role="button">Manage Products</a></p>
+	<p><a class="btn btn-default" href="{% url 'manageusers' %}" role="button">Manage Users</a></p>
+	<p><a class="btn btn-default" href="{% url 'manageorders' %}" role="button">Manage Orders</a></p>
+	<p><a class="btn btn-default" href="{% url 'supply' %}" role="button">Manage Supply</a></p>
+
+
+{% endblock %}

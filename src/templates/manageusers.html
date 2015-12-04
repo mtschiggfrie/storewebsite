@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<table class='table table-striped table-bordered'>
+	<tr><td>User ID</td><td>Name</td><td>Address</td><td>Password</td><td>Email</td><td>Staff</td></tr>
+	{% for obj in queryset %}
+		<tr><td>{{ obj.id }}</td><td>{{ obj.name }}</td><td>{{ obj.address }}</td><td>{{ obj.password }}</td><td>{{ obj.email }}</td><td>{{ obj.is_staff }}</td></tr>
+	{% endfor %}
+</table>
+
+<br><br><br>
+
+<div class="row">
+	<div class="col-xs-2 col-xs-offset-1">
+		<p>Enter the ID of the product you wish to delete.</p>
+		<form method='POST' action=''>{% csrf_token %}
+			{{ deleteform|crispy }}
+			<input type='submit' name="delete" class="btn btn-success" 	value='Delete User' />
+		</form>
+	</div>
+	<div class="col-xs-3 col-xs-offset-1">
+		<p>Enter the ID of the product you wish to edit.</p>
+		<form method='POST' action=''>{% csrf_token %}
+			{{ lookupform|crispy }}
+			<input type='submit' name="lookup" class="btn btn-success" 	value='Edit User' />
+		</form>
+		<br>
+		<form method='POST' action=''>{% csrf_token %}
+			{{ updateform|crispy }}
+			<input type='submit' name="update" class="btn btn-success" 	value='Update User' />
+		</form>
+	</div>
+	<div class="col-xs-3 col-xs-offset-1">
+		<p>Add the information for the new product</p>
+		<form method='POST' action=''>{% csrf_token %}
+			{{ createform|crispy }}
+			<input type='submit' name="create" class="btn btn-success" 	value='Create User' />
+		</form>
+	</div>
+</div>	
+
+
+{% endblock %}

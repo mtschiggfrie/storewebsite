@@ -11,23 +11,23 @@
 
 <br><br><br>
 
-<div class="col-xs-4 col-xs-offset-3">
-	<div style="float:left;">
-		<h1> Sign In </h1>
-		<br>
-	  <form method='POST' action=''>{% csrf_token %}
+
+<div class="row">
+	<div class="col-xs-2 col-xs-offset-1">
+		<p>Enter your user information.</p>
+		<form method='POST' action=''>{% csrf_token %}
 			{{ signinform|crispy }}
-			<input type='submit' class="btn btn-success" name = 'signin' value='Sign In' />
+			<input type='submit' name="login" class="btn btn-success" 	value='Log In' />
 		</form>
 	</div>
-</div>
-
-	<div style="float:left;">
-		<h1> Create Account </h1>
-		<br>
-	 
+	<div class="col-xs-3 col-xs-offset-1">
+		<p>Add your information to create an account.</p>
+		<form method='POST' action=''>{% csrf_token %}
+			{{ createaccountform|crispy }}
+			<input type='submit' name="create" class="btn btn-success" 	value='Create Account' />
+		</form>
 	</div>
-</div>
+</div>	
 
 
 

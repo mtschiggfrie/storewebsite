@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+<div class="row">
+	<div class="col-xs-4 col-xs-offset-4">
+		<h4>Enter your new information in the form below.</h4>
+		<form method='POST' action=''>{% csrf_token %}
+			{{ updateform|crispy }}
+			<input type='submit' name="updateaccount" class="btn btn-success" 	value="Update Account Info" />
+		</form>
+	</div>
+</div>
+
+<br><br><br>
+
+<div class="row">
+	<div class="col-xs-4 col-xs-offset-4">
+		<h4>Click here if you would like to delete your account.</h4>
+		<form method='POST' action=''>{% csrf_token %}
+			<input type='submit' name="deleteaccount" class="btn btn-success" 	value="Delete Account" />
+		</form>
+	</div>
+</div>
+
+{% endblock %}

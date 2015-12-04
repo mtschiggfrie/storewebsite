@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="row">
+	<div class="col-xs-2 col-xs-offset-3">
+		<table class='table table-striped table-bordered'>
+			<tr><td>User ID</td><td>Order ID</td></tr>
+			{% for obj in ordersquery %}
+				<tr><td>{{ obj.userId }}</td><td>{{ obj.orderId }}</td></tr>
+			{% endfor %}
+		</table>
+	</div>
+	<div class="col-xs-2">
+		<table class='table table-striped table-bordered'>
+			<tr><td>Product ID</td><td>Quantity</td></tr>
+			{% for obj in containsquery %}
+				<tr><td>{{ obj.productId }}</td><td>{{ obj.quantity }}</td></tr>
+			{% endfor %}
+		</table>
+	</div>
+	<div class="col-xs-2">
+		<table class='table table-striped table-bordered'>
+			<tr><td>Date</td><td>Paid</td></tr>
+			{% for obj in createorderquery %}
+				<tr><td>{{ obj.date }}</td><td>{{ obj.paid }}</td></tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-xs-2 col-xs-offset-1">
+		<p>Enter the ID of the order you wish to delete.</p>
+		<form method='POST' action=''>{% csrf_token %}
+			{{ deleteorderform |crispy }}
+			<input type='submit' name="delete" class="btn btn-success" value="Delete Order" />
+		</form>
+	</div>
+	<div class="col-xs-3 col-xs-offset-1">
+		<p>Enter the ID of the order and the new quantity of the product.</p>
+		<form method='POST' action=''>{% csrf_token %}
+			{{ updatequantityform|crispy }}
+			<input type='submit' name="updatequantity" class="btn btn-success" 	value="Create User" />
+		</form>
+	</div>
+	<div class="col-xs-3 col-xs-offset-1">
+		<p>Enter the Order ID and if it's paid or not.</p>
+		<form method='POST' action=''>{% csrf_token %}
+			{{ changepaidform|crispy }}
+			<input type='submit' name="changepaid" class="btn btn-success" 	value="Change Paid Status" />
+		</form>
+	</div>
+</div>
+
+{% endblock %}

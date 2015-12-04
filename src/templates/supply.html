@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="col-xs-10 col-xs-offset-1">
-	<h3 align="center">{{ title }}</h3>
+<!-- 	<h3 align="center">{{ title }}</h3>
 	<div>
 		<form method='POST' action=''>{% csrf_token %}
 			<input type='submit' name="order" class="btn btn-success" 	value='Order By Price' />
@@ -12,11 +12,17 @@
 			{{ form|crispy }}
 		<input type='submit' name="search" class="btn btn-success" 	value='Search' />
 		</form>
-	</div>
+	</div> -->
 	<table class='table table-striped table-bordered table-hover'>
-		<tr><td>Product Name</td><td>Price</td><td>Current Stock</td><td>Description</td></tr>
-	{% for obj in queryset %}
-		<tr onclick="window.document.location='{% url 'order' obj.id %}';"><td>{{ obj.name }}</td><td>{{ obj.price }}</td><td>{{ obj.stock }}</td><td>{{ obj.description }}</td></tr>
+		<tr><td>Supplier ID</td><td>Supplier Name</td></tr>
+	{% for obj in supplierquery %}
+		<tr><td>{{ obj.id }}</td><td>{{ obj.name }}</td></tr>
+	{% endfor %}
+	</table>
+	<table class='table table-striped table-bordered table-hover'>
+		<tr><td>Supplier ID</td><td>Product ID</td></tr>
+	{% for obj in supplysquery %}
+		<tr><td>{{ obj.supplierId }}</td><td>{{ obj.productId }}</td></tr>
 	{% endfor %}
 	</table>
 </div>

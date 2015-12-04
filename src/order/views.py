@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from product.models import CreateProduct
 from .forms import ContainsForm
+from .forms import PayForm
+from .forms import DeleteCartForm
 from .models import Contains
 from .models import CreateOrder
 from .models import Orders
@@ -12,7 +14,7 @@ from itertools import chain
 # Create your views here.
 def order(request, int):
 
-	title = int
+	title = "Enter the amount of this product you would like to order."
 	queryset = CreateProduct.objects.get(id=int)
 	#form = ContainsForm(request.POST or None)
 	form = ContainsForm(request.POST or None, initial={'productId': int})
@@ -37,7 +39,7 @@ def order(request, int):
 		order.orderId = createorder.OrderId
 		order.save()
 		context = {
-			"title":  createorder.OrderId
+			"title":  "Thank you. Your order has been placed inside your shopping cart."
 	}
 
 
@@ -51,28 +53,41 @@ def cart(request):
 		"orders": {},
 	}
 
-	title = request.user.id
+	title = "Pay for your current order."
 	#username = User.objects.get(email=instance.email)
-	ordersQuery = Orders.objects.filter(userId=request.user.id).only()
+	createOrderQuery = CreateOrder.objects.filter(paid=False)
+	ordersQuery = Orders.objects.filter(userId=request.user.id, orderId__in=createOrderQuery).only()
 	orders = list(ordersQuery)
 
-	totals = []
 	contains = []
+	quantity = []
 	for order in orders:
 		containsList = Contains.objects.filter(orderId=order.orderId)
 		contains.extend(list(containsList))
-		totals.extend(list(containsList.quantity))
+		quantity.extend(list(containsList.values('quantity') ))
 
 	#list1 = list(set(orders)|set(contains))
 
 	products = []
+	price = []
 	index = 0
 	for contain in contains:
 		productsList = CreateProduct.objects.filter(id=contain.productId)
 		products.extend(list(productsList))
-		totals[index] = totals[index] * productsList.price
+		price.extend(list(productsList.values('price')))
+		index = index + 1
 
+	totals = []
+	total = 0
 
+	for i in range(0, index):
+		current = price[i]['price'] * quantity[i]['quantity']
+		totals.append(current)
+		total = total + current
+
+	form = PayForm(request.POST or None, initial={'total': total})
+
+	deletecartform = DeleteCartForm(request.POST or None)
 
 	context = {
 		"title": title,
@@ -80,19 +95,45 @@ def cart(request):
 		"contains": contains,
 		"products": products,
 		"totals": totals,
-		#"list1": list1,
+		"total": total,
+		"form": form,
+		"deletecartform": deletecartform,
+
 	}
 
-	# try:
-	# 	title = request.user.id
-	# 	#username = User.objects.get(email=instance.email)
-	# 	orders = Orders.objects.get(userId=request.user.id)
 
-	# 	context = {
-	# 		"title": title,
-	# 		"orders": orders,
-	# 	}
-	# except: 
- #  		pass
+	if 'pay' in request.POST:
+		if form.is_valid():
+			ids = Orders.objects.filter(userId=request.user.id, orderId__in=createOrderQuery).values_list('orderId', flat=True)
+			var = CreateOrder.objects.filter(OrderId__in=ids, paid=False).count()
+			#CreateOrder.objects.filter(OrderId__in=ids, paid=False).update(paid=True)
 
+
+			for i in range(0, var):
+				ids2 = Contains.objects.filter(orderId=orders[i].orderId)
+				currentOrderID = ids2[0].orderId
+				query = CreateProduct.objects.filter(id=ids2[0].productId).values_list('stock', flat=True)
+				if (query[0]-quantity[i]['quantity']) < 0:
+					context = {
+						"title": 'We currently do not have that many in stock. Please try placing your order again.'
+					}
+					CreateOrder.objects.filter(OrderId=currentOrderID, paid=False).delete()
+					Contains.objects.filter(orderId=currentOrderID).delete()
+					Orders.objects.filter(orderId=currentOrderID).delete()
+				else:
+					CreateProduct.objects.filter(id=ids2[0].productId).update(stock=query[0]-quantity[i]['quantity'])
+					context = {"title": "You paid for your orders successfully."}
+					CreateOrder.objects.filter(OrderId=currentOrderID, paid=False).update(paid=True)
+
+
+	if 'delete' in request.POST:
+		if deletecartform.is_valid():
+			cd = deletecartform.cleaned_data
+			orderId = cd.get('orderId')
+			CreateOrder.objects.filter(OrderId=orderId, paid=False).delete()
+			Contains.objects.filter(orderId=orderId).delete()
+			Orders.objects.filter(orderId=orderId).delete()
+
+
+	
 	return render(request, "cart.html", context)
