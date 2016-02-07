@@ -183,7 +183,7 @@ def products(request):
 			LatestDate = CreateOrder.objects.filter(OrderId__in=ContainsProductToDeleteQuery).latest('date')
 			DaysSinceLastOrder = datetime.date.today() - LatestDate.date
 
-			if DaysSinceLastOrder.days < 30:
+			if DaysSinceLastOrder.days > 30:
 				CreateProduct.objects.filter(id=a).delete()
 				context = {
 					"deleteform": DeleteProductForm(request.POST or None),

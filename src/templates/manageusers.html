@@ -14,14 +14,14 @@
 
 <div class="row">
 	<div class="col-xs-2 col-xs-offset-1">
-		<p>Enter the ID of the product you wish to delete.</p>
+		<p>Enter the ID of the user you wish to delete.</p>
 		<form method='POST' action=''>{% csrf_token %}
 			{{ deleteform|crispy }}
 			<input type='submit' name="delete" class="btn btn-success" 	value='Delete User' />
 		</form>
 	</div>
 	<div class="col-xs-3 col-xs-offset-1">
-		<p>Enter the ID of the product you wish to edit.</p>
+		<p>Enter the ID of the user you wish to edit.</p>
 		<form method='POST' action=''>{% csrf_token %}
 			{{ lookupform|crispy }}
 			<input type='submit' name="lookup" class="btn btn-success" 	value='Edit User' />
@@ -33,7 +33,7 @@
 		</form>
 	</div>
 	<div class="col-xs-3 col-xs-offset-1">
-		<p>Add the information for the new product</p>
+		<p>Add the information for the new user</p>
 		<form method='POST' action=''>{% csrf_token %}
 			{{ createform|crispy }}
 			<input type='submit' name="create" class="btn btn-success" 	value='Create User' />

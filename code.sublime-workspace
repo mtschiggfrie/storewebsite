@@ -1,0 +1,429 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"o",
+				"order_by"
+			],
+			[
+				"su",
+				"suppliersList"
+			],
+			[
+				"suppli",
+				"suppliersList"
+			],
+			[
+				"pro",
+				"productsList"
+			],
+			[
+				"Su",
+				"Supplys"
+			],
+			[
+				"new",
+				"newSupplys"
+			],
+			[
+				"Create",
+				"CreateProduct"
+			],
+			[
+				"Sup",
+				"Supplier"
+			],
+			[
+				"del",
+				"deletecartform"
+			],
+			[
+				"f",
+				"forms"
+			],
+			[
+				"ids",
+				"ids2"
+			],
+			[
+				"Con",
+				"ContainsProductToDeleteQuery"
+			],
+			[
+				"Crea",
+				"CreateOrder"
+			],
+			[
+				"O",
+				"Orders"
+			],
+			[
+				"or",
+				"orderId"
+			],
+			[
+				"C",
+				"Contains"
+			],
+			[
+				"is",
+				"is_staff"
+			],
+			[
+				"creat",
+				"create_user"
+			],
+			[
+				"obj",
+				"objects"
+			],
+			[
+				"create",
+				"createaccountform"
+			],
+			[
+				"user",
+				"userId"
+			],
+			[
+				"up",
+				"updateform"
+			],
+			[
+				"us",
+				"userId"
+			],
+			[
+				"ob",
+				"objects"
+			],
+			[
+				"u",
+				"userId"
+			],
+			[
+				"change",
+				"changepaidform"
+			],
+			[
+				"update",
+				"updatequantityform"
+			],
+			[
+				"Up",
+				"UpdateQuantityForm"
+			],
+			[
+				"delete",
+				"deleteorderform"
+			],
+			[
+				"Cre",
+				"CreateOrder"
+			],
+			[
+				"Cr",
+				"CreateOrder"
+			],
+			[
+				"query",
+				"queryset"
+			],
+			[
+				"oj",
+				"objects"
+			],
+			[
+				"quer",
+				"queryDescription"
+			],
+			[
+				"crea",
+				"CreateProduct"
+			],
+			[
+				"orde",
+				"orderId"
+			],
+			[
+				"Creat",
+				"CreateProduct"
+			],
+			[
+				"qu",
+				"quantity"
+			],
+			[
+				"values",
+				"values_list"
+			],
+			[
+				"Pay",
+				"PayForm"
+			],
+			[
+				"contain",
+				"containsList"
+			],
+			[
+				"products",
+				"productsList"
+			],
+			[
+				"con",
+				"containsList"
+			],
+			[
+				"orders",
+				"ordersQuery"
+			],
+			[
+				"order",
+				"orderId"
+			],
+			[
+				"product",
+				"productId"
+			],
+			[
+				"Order",
+				"OrderId"
+			],
+			[
+				"try",
+				"try	Try/Except"
+			],
+			[
+				"prod",
+				"productId"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"m",
+				"max_length"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Matthew/Desktop/db website/src/home/views.py",
+		"/C/Users/Matthew/Desktop/db website/src/product/admin.py",
+		"/C/Users/Matthew/Desktop/db website/src/product/models.py",
+		"/C/Users/Matthew/Desktop/db website/src/product/forms.py",
+		"/C/Users/Matthew/Desktop/db website/src/product/views.py",
+		"/C/Users/Matthew/Desktop/db website/src/templates/home.html",
+		"/C/Users/Matthew/Desktop/db website/src/templates/navbar.html",
+		"/C/Users/Matthew/Desktop/db website/src/store/urls.py",
+		"/C/Users/Matthew/Desktop/db website/src/supply/views.py",
+		"/C/Users/Matthew/Desktop/db website/src/templates/alert.html",
+		"/C/Users/Matthew/Desktop/db website/src/order/views.py",
+		"/C/Users/Matthew/Desktop/db website/src/templates/cart.html",
+		"/C/Users/Matthew/Desktop/db website/src/templates/supply.html",
+		"/C/Users/Matthew/Desktop/db website/src/templates/manageproducts.html",
+		"/C/Users/Matthew/Desktop/db website/src/supply/models.py",
+		"/C/Users/Matthew/Desktop/db website/src/home/forms.py",
+		"/C/Users/Matthew/Desktop/db website/src/templates/manage.html",
+		"/C/Users/Matthew/Desktop/db website/src/templates/product.html",
+		"/C/Users/Matthew/Desktop/db website/src/order/models.py",
+		"/C/Users/Matthew/Desktop/db website/src/order/forms.py",
+		"/C/Users/Matthew/Desktop/db website/src/templates/order.html",
+		"/C/Users/Matthew/Desktop/db website/src/store/settings.py",
+		"/C/Users/Matthew/Desktop/db website/src/user/views.py",
+		"/C/Users/Matthew/Desktop/db website/src/user/models.py",
+		"/C/Users/Matthew/Desktop/db website/src/user/forms.py",
+		"/C/Users/Matthew/Desktop/db website/src/templates/editaccount.html",
+		"/C/Users/Matthew/Desktop/db website/src/templates/signin.html",
+		"/C/Users/Matthew/Desktop/db website/src/templates/manageusers.html",
+		"/C/Users/Matthew/Desktop/db website/src/templates/manageorders.html",
+		"/C/Users/Matthew/Desktop/db website/src/templates/createproduct.html",
+		"/C/Users/Matthew/Desktop/db website/src/templates/base.html",
+		"/C/Users/Matthew/Desktop/db website/src/static/css/bootstrap.min.css",
+		"/C/Users/Matthew/Desktop/db website/src/static/js/bootstrap.min.js",
+		"/C/Users/Matthew/Desktop/db website/src/static/css/navbar.css",
+		"/C/Users/Matthew/Desktop/db website/src/static/css/jumbotron.css",
+		"/C/Users/Matthew/Desktop/db website/src/templates/about.html",
+		"/C/Users/Matthew/Desktop/db website/src/order/admin.py",
+		"/C/Users/Matthew/Desktop/db website/src/templates/logout.html",
+		"/C/Users/Matthew/Desktop/db website/src/templates/createaccount.html",
+		"/C/Users/Matthew/Desktop/db website/src/user/admin.py",
+		"/C/Users/Matthew/Desktop/db website/src/products/models.py",
+		"/C/Users/Matthew/Desktop/db website/src/products/views.py",
+		"/C/Users/Matthew/Desktop/db website/src/products/admin.py",
+		"/C/Users/Matthew/Desktop/db website/src/home/admin.py",
+		"/C/Users/Matthew/Desktop/db website/src/templates/products.html",
+		"/C/Users/Matthew/Desktop/db website/static/css/bootstrap.min.css",
+		"/C/Users/Matthew/Desktop/db website/src/templates/create-account.html",
+		"/C/Users/Matthew/Desktop/db website/src/home/models.py",
+		"/C/Users/Matthew/Desktop/db website/src/home/templates/home.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"def supply(request):",
+			"		\n",
+			"value",
+			"col-sm-10",
+			"form-control{display:block;width:100%",
+			"width:100%",
+			"width"
+		],
+		"highlight": true,
+		"in_selection": true,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 25.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": false
+}
